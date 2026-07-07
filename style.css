@@ -287,9 +287,9 @@ VINYL
 .tonearm {
   position: absolute;
 
-  width: 170px;
+  width: 190px;
 
-  top: 145px;
+  top: 160px;
 
   right: 0px;
 
@@ -580,9 +580,9 @@ NAME
 #guestDisplay {
   position: absolute;
 
-  left: 58%;
+  left: 56.6%;
 
-  top: 57%;
+  top: 59%; /*xuong duoi nhieu hon thi tang top*/
 
   line-height: 1;
 
