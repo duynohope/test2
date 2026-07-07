@@ -20,14 +20,18 @@ const beam = document.getElementById("lightBeam");
    BACKGROUND PARTICLES
 ========================================================== */
 
+/* ==========================================================
+   BACKGROUND PARTICLES
+========================================================== */
+
 const particleContainer = document.getElementById("particles");
 
-for (let i = 0; i < 90; i++) {
+function randomParticle() {
   const p = document.createElement("div");
 
   p.className = "particle";
 
-  const size = Math.random() * 3 + 2;
+  const size = Math.random() * 3 + 1;
 
   p.style.width = size + "px";
 
@@ -37,14 +41,55 @@ for (let i = 0; i < 90; i++) {
 
   p.style.top = Math.random() * 100 + "vh";
 
-  p.style.opacity = Math.random() * 0.8 + 0.2;
-
-  p.style.animationDuration = Math.random() * 15 + 12 + "s";
-
-  p.style.animationDelay = Math.random() * 6 + "s";
+  p.style.opacity = 0;
 
   particleContainer.appendChild(p);
+
+  const x = (Math.random() - 0.5) * 120;
+
+  const y = (Math.random() - 0.5) * 120;
+
+  const maxOpacity = Math.random() * 0.8 + 0.2;
+
+  p.animate(
+    [
+      {
+        transform: "translate(0,0)",
+
+        opacity: 0,
+      },
+
+      {
+        transform: `translate(${x / 2}px,${y / 2}px)`,
+
+        opacity: maxOpacity,
+
+        offset: 0.4,
+      },
+
+      {
+        transform: `translate(${x}px,${y}px)`,
+
+        opacity: 0,
+      },
+    ],
+    {
+      duration: Math.random() * 5000 + 4000,
+
+      easing: "ease-in-out",
+    },
+  );
+
+  setTimeout(() => {
+    p.remove();
+  }, 9000);
 }
+
+setInterval(() => {
+  if (document.querySelectorAll(".particle").length < 120) {
+    randomParticle();
+  }
+}, 120);
 
 /* ==========================================================
    MUSIC
