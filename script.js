@@ -26,6 +26,14 @@ const beam = document.getElementById("lightBeam");
 
 const particleContainer = document.getElementById("particles");
 
+function firstTouch() {
+  startMusic();
+
+  document.removeEventListener("pointerdown", firstTouch);
+}
+
+document.addEventListener("pointerdown", firstTouch);
+
 function randomParticle() {
   const p = document.createElement("div");
 
@@ -96,6 +104,8 @@ setInterval(() => {
 ========================================================== */
 
 function startMusic() {
+  if (!music.paused) return;
+
   music.volume = 0;
 
   music.play().catch(() => {});
@@ -105,13 +115,9 @@ function startMusic() {
   const fade = setInterval(() => {
     volume += 0.01;
 
-    if (volume >= 0.35) {
-      volume = 0.35;
+    music.volume = Math.min(volume, 0.35);
 
-      clearInterval(fade);
-    }
-
-    music.volume = volume;
+    if (volume >= 0.35) clearInterval(fade);
   }, 70);
 }
 
