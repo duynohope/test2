@@ -560,7 +560,7 @@ CARD
 
   align-items: center;
 
-  padding: 80px 0 120px;
+  padding: 40px 0 120px;
 
   opacity: 0;
 
@@ -780,7 +780,7 @@ RESPONSIVE
   .tonearm {
     width: 75%;
     right: -13%;
-    top: 7%;
+    top: 6%;
   }
 
   .input-wrapper {
