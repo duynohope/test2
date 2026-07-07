@@ -582,7 +582,7 @@ NAME
 
   left: 56.1%;
 
-  top: 62%; /*xuong duoi nhieu hon thi tang top*/
+  top: 61.1%; /*xuong duoi nhieu hon thi tang top*/
 
   line-height: 1;
 
@@ -695,11 +695,9 @@ RESPONSIVE
   }
 
   .tonearm {
-    width: 72%;
-
-    right: -5%;
-
-    top: 20%;
+    width: 66%;
+    right: -12%;
+    top: 11%;
   }
 
   .input-wrapper {
