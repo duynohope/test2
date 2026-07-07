@@ -465,9 +465,9 @@ CARD
 =======================================================*/
 
 #cardSection {
-  position: fixed;
+  min-height: 100vh;
 
-  inset: 0;
+  width: 100%;
 
   display: flex;
 
@@ -477,11 +477,19 @@ CARD
 
   align-items: center;
 
+  padding: 80px 0 120px;
+
   opacity: 0;
 
   pointer-events: none;
 
-  z-index: 100;
+  background: url("assets/background.webp");
+
+  background-size: cover;
+
+  background-position: center top;
+
+  background-repeat: no-repeat;
 }
 
 #cardSection.show {
@@ -493,7 +501,7 @@ CARD
 .card-wrapper {
   position: relative;
 
-  width: min(94vw, 540px);
+  width: min(82vw, 470px);
 }
 
 .card {
@@ -571,7 +579,7 @@ NAME
 
   left: 50%;
 
-  top: 58%;
+  top: 60%;
 
   width: 54%;
 
@@ -603,7 +611,7 @@ FLOWER
 =======================================================*/
 
 .flower-section {
-  margin-top: 70px;
+  margin-top: 35px;
 
   opacity: 0;
 
@@ -709,6 +717,7 @@ RESPONSIVE
 
   .card-title {
     font-size: 11px;
+    top: -45px;
   }
 
   .flower {
