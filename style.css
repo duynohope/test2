@@ -244,7 +244,7 @@ VINYL
 =======================================================*/
 
 .music-section {
-  margin-top: 310px;
+  margin-top: 430px;
 
   display: flex;
 
@@ -502,6 +502,8 @@ CARD
   position: relative;
 
   width: min(82vw, 470px);
+
+  margin-top: 40px;
 }
 
 .card {
@@ -512,8 +514,8 @@ CARD
   border-radius: 22px;
 
   box-shadow:
-    0 0 45px rgba(255, 215, 0, 0.25),
-    0 25px 70px rgba(0, 0, 0, 0.45);
+    0 35px 70px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(255, 255, 255, 0.15);
 }
 
 /* =======================================================
@@ -553,6 +555,7 @@ TITLE
 =======================================================*/
 
 .card-title {
+  display: none;
   position: absolute;
 
   top: 15%;
@@ -579,7 +582,9 @@ NAME
 
   left: 50%;
 
-  top: 60%;
+  top: 61.5%;
+
+  line-height: 1;
 
   width: 54%;
 
@@ -611,7 +616,7 @@ FLOWER
 =======================================================*/
 
 .flower-section {
-  margin-top: 35px;
+  margin-top: 25px;
 
   opacity: 0;
 
