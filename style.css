@@ -580,9 +580,9 @@ NAME
 #guestDisplay {
   position: absolute;
 
-  left: 56.5%;
+  left: 56.2%;
 
-  top: 60%; /*xuong duoi nhieu hon thi tang top*/
+  top: 61%; /*xuong duoi nhieu hon thi tang top*/
 
   line-height: 1;
 
@@ -697,9 +697,9 @@ RESPONSIVE
   .tonearm {
     width: 62%;
 
-    right: -18%;
+    right: -15%;
 
-    top: -1%;
+    top: 5%;
   }
 
   .input-wrapper {
