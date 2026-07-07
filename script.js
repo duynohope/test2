@@ -215,7 +215,7 @@ function launchConfetti() {
 
       angle: 90,
 
-      spread: 180,
+      spread: 150,
 
       startVelocity: 45,
 
@@ -299,6 +299,10 @@ openBtn.addEventListener("click", () => {
     landing.style.display = "none";
 
     cardSection.classList.add("show");
+    window.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
   }, 900);
 
   setTimeout(() => {
