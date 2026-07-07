@@ -129,7 +129,7 @@ LIGHT BEAM
 
   top: -120%;
 
-  left: -60%;
+  left: -57%;
 
   width: 80%;
 
@@ -204,7 +204,7 @@ LANDING
 .lights {
   position: absolute;
 
-  top: 0;
+  top: -30px;
 
   left: 50%;
 
@@ -244,7 +244,7 @@ VINYL
 =======================================================*/
 
 .music-section {
-  margin-top: 430px;
+  margin-top: 460px;
 
   display: flex;
 
@@ -289,24 +289,24 @@ VINYL
 
   width: 170px;
 
-  top: 18px;
+  top: 122px;
 
-  right: -8px;
+  right: 18px;
 
   transform-origin: 92% 12%;
 
   animation: tonearmDrop 1.8s ease forwards;
 
-  z-index: 5;
+  z-index: 10;
 }
 
 @keyframes tonearmDrop {
   from {
-    transform: rotate(-20deg);
+    transform: rotate(18deg);
   }
 
   to {
-    transform: rotate(22deg);
+    transform: rotate(-2deg);
   }
 }
 
