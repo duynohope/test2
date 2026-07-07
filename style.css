@@ -503,7 +503,7 @@ CARD
 
   width: min(82vw, 470px);
 
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .card {
@@ -580,15 +580,15 @@ NAME
 #guestDisplay {
   position: absolute;
 
-  left: 50%;
+  left: 52%;
 
-  top: 61.5%;
+  top: 61.2%;
 
   line-height: 1;
 
   width: 54%;
 
-  transform: translateX(-50%) rotate(-4.2deg);
+  transform: translateX(-50%) rotate(-6deg);
 
   text-align: center;
 
