@@ -289,9 +289,9 @@ VINYL
 
   width: 170px;
 
-  top: 122px;
+  top: 135px;
 
-  right: 18px;
+  right: 0px;
 
   transform-origin: 92% 12%;
 
@@ -302,11 +302,11 @@ VINYL
 
 @keyframes tonearmDrop {
   from {
-    transform: rotate(18deg);
+    transform: rotate(-22deg);
   }
 
   to {
-    transform: rotate(-2deg);
+    transform: rotate(0deg);
   }
 }
 
@@ -582,7 +582,7 @@ NAME
 
   left: 60%;
 
-  top: 61.2%;
+  top: 56%;
 
   line-height: 1;
 
