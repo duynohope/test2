@@ -193,27 +193,51 @@ function explodeStar() {
 ========================================================== */
 
 function launchConfetti() {
-  confetti({
-    particleCount: 260,
+  const duration = 3500;
+  const end = Date.now() + duration;
 
-    spread: 180,
+  const colors = [
+    "#FFFFFF", // trắng
+    "#FFD54F", // vàng nhạt
+    "#F4A261", // cam pastel
+    "#64B5F6", // xanh dương
+    "#42A5F5", // xanh trời
+    "#7E57C2", // tím
+    "#81C784", // xanh lá
+    "#FF8A80", // hồng nhạt
+    "#90CAF9", // xanh băng
+    "#FFF176", // vàng sáng
+  ];
 
-    startVelocity: 55,
+  (function frame() {
+    confetti({
+      particleCount: 8,
 
-    gravity: 0.9,
+      angle: 90,
 
-    scalar: 1.1,
+      spread: 180,
 
-    ticks: 320,
+      startVelocity: 45,
 
-    origin: {
-      x: 0.5,
+      gravity: 0.75,
 
-      y: 0.58,
-    },
+      ticks: 450,
 
-    colors: ["#ffffff", "#ffe066", "#9ddcff", "#d4af37"],
-  });
+      scalar: 1.2,
+
+      origin: {
+        x: Math.random(),
+
+        y: -0.05,
+      },
+
+      colors: colors,
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
 }
 
 /* ==========================================================
