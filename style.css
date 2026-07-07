@@ -432,19 +432,18 @@ STAR
 
   font-weight: 700;
 
-  letter-spacing: 4px;
+  letter-spacing: 3px;
 
   text-transform: uppercase;
 
-  background: linear-gradient(180deg, #ffffff 0%, #fff8d9 35%, #ffd54f 100%);
+  color: #fffdf2;
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.45px rgba(18, 25, 40, 0.75);
 
-  -webkit-text-stroke: 0.35px rgba(18, 30, 52, 0.75);
-
-  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.45))
-    drop-shadow(0 0 12px rgba(255, 215, 0, 0.45));
+  text-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.6),
+    0 0 8px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 214, 82, 0.45);
 
   animation: glowText 2.6s ease-in-out infinite;
 }
