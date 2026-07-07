@@ -1,0 +1,707 @@
+/* =======================================================
+   GRADUATION INVITATION V2
+   PART 1
+   Reset + Background + Landing + Vinyl + Effects
+=======================================================*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+
+  background: url("assets/background.webp");
+
+  background-size: cover;
+
+  background-repeat: repeat-y;
+
+  background-position: center top;
+
+  overflow-x: hidden;
+
+  color: #fff;
+}
+
+/* =======================================================
+BACKGROUND
+=======================================================*/
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 255, 255, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 65%,
+      rgba(255, 255, 255, 0.06),
+      transparent 30%
+    );
+
+  pointer-events: none;
+
+  animation: ambientGlow 12s ease-in-out infinite;
+
+  z-index: -2;
+}
+
+@keyframes ambientGlow {
+  0%,
+  100% {
+    transform: translateX(0);
+
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateX(35px);
+
+    opacity: 0.65;
+  }
+}
+
+/* =======================================================
+PARTICLES
+=======================================================*/
+
+#particles {
+  position: fixed;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: white;
+
+  animation:
+    floatParticle linear infinite,
+    twinkle 3s ease-in-out infinite;
+}
+
+@keyframes floatParticle {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-140px);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* =======================================================
+LIGHT BEAM
+=======================================================*/
+
+#lightBeam {
+  position: fixed;
+
+  top: -120%;
+
+  left: -60%;
+
+  width: 80%;
+
+  height: 260%;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  z-index: 999;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+
+  filter: blur(38px);
+
+  transform: rotate(25deg);
+}
+
+#lightBeam.show {
+  animation: beam 0.9s linear forwards;
+}
+
+@keyframes beam {
+  from {
+    opacity: 1;
+
+    transform: translate(-150%, -150%) rotate(25deg);
+  }
+
+  to {
+    opacity: 0;
+
+    transform: translate(240%, 240%) rotate(25deg);
+  }
+}
+
+/* =======================================================
+LANDING
+=======================================================*/
+
+#landing {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  transition: 1s;
+}
+
+#landing.hide {
+  opacity: 0;
+
+  transform: scale(0.95);
+
+  filter: blur(8px);
+}
+
+.lights {
+  position: absolute;
+
+  top: 0;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: min(100%, 900px);
+
+  pointer-events: none;
+
+  animation: lightSwing 6s ease-in-out infinite;
+
+  transform-origin: top center;
+
+  z-index: 5;
+}
+
+@keyframes lightSwing {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(-50%) rotate(0.8deg);
+  }
+
+  75% {
+    transform: translateX(-50%) rotate(-0.8deg);
+  }
+
+  100% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+}
+
+/* =======================================================
+VINYL
+=======================================================*/
+
+.music-section {
+  margin-top: 310px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.record-player {
+  position: relative;
+
+  width: min(72vw, 430px);
+
+  aspect-ratio: 1;
+}
+
+.vinyl {
+  width: 100%;
+
+  display: block;
+
+  animation: spin 8s linear infinite;
+
+  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.18))
+    drop-shadow(0 20px 45px rgba(0, 0, 0, 0.45));
+
+  cursor: pointer;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tonearm {
+  position: absolute;
+
+  width: 58%;
+
+  right: -16%;
+
+  top: -2%;
+
+  transform-origin: 16% 10%;
+
+  animation: tonearmDrop 1.8s ease forwards;
+
+  z-index: 20;
+}
+
+@keyframes tonearmDrop {
+  from {
+    transform: rotate(-22deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* =======================================================
+VINYL INTRO
+=======================================================*/
+
+.record-player {
+  animation: dropVinyl 1.2s cubic-bezier(0.2, 1, 0.22, 1);
+}
+
+@keyframes dropVinyl {
+  0% {
+    opacity: 0;
+
+    transform: translateY(-200px) scale(0.4);
+  }
+
+  70% {
+    opacity: 1;
+
+    transform: translateY(25px) scale(1.06);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+/* =======================================================
+INPUT
+=======================================================*/
+
+.input-section {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 90px;
+}
+
+.input-wrapper {
+  position: relative;
+
+  width: min(88vw, 430px);
+}
+
+.input-bg {
+  width: 100%;
+
+  display: block;
+}
+
+#guestName {
+  position: absolute;
+
+  left: 8%;
+
+  top: 25%;
+
+  width: 84%;
+
+  height: 48%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  text-align: center;
+
+  font-size: clamp(18px, 5vw, 26px);
+
+  font-weight: 700;
+
+  color: #533400;
+
+  font-family: "Montserrat", sans-serif;
+}
+
+#guestName::placeholder {
+  color: #886633;
+}
+
+/* =======================================================
+STAR
+=======================================================*/
+
+.star-section {
+  margin-top: 90px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.star {
+  width: min(140px, 32vw);
+
+  cursor: pointer;
+
+  animation:
+    starFloat 3s ease-in-out infinite,
+    starGlow 2s ease-in-out infinite;
+}
+
+.star:hover {
+  transform: scale(1.08);
+}
+
+.star-text {
+  margin-top: 20px;
+
+  font-size: 16px;
+
+  color: white;
+
+  letter-spacing: 1px;
+
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes starFloat {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes starGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 12px gold);
+  }
+
+  50% {
+    filter: drop-shadow(0 0 35px gold);
+  }
+}
+
+/* =======================================================
+CARD
+=======================================================*/
+
+#cardSection {
+  position: fixed;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  z-index: 100;
+}
+
+#cardSection.show {
+  pointer-events: auto;
+
+  animation: dropNotebook 1.8s cubic-bezier(0.2, 1, 0.25, 1) forwards;
+}
+
+.card-wrapper {
+  position: relative;
+
+  width: min(94vw, 540px);
+}
+
+.card {
+  width: 100%;
+
+  display: block;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 0 45px rgba(255, 215, 0, 0.25),
+    0 25px 70px rgba(0, 0, 0, 0.45);
+}
+
+/* =======================================================
+NOTEBOOK OPEN
+=======================================================*/
+
+@keyframes dropNotebook {
+  0% {
+    opacity: 0;
+
+    transform: translateY(-900px) scale(0.35) rotate(-18deg);
+
+    filter: blur(8px);
+  }
+
+  60% {
+    opacity: 1;
+
+    transform: translateY(35px) scale(1.05) rotate(5deg);
+
+    filter: blur(0);
+  }
+
+  82% {
+    transform: translateY(-10px) scale(0.98) rotate(-2deg);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateY(0) scale(1) rotate(0);
+  }
+}
+
+/* =======================================================
+TITLE
+=======================================================*/
+
+.card-title {
+  position: absolute;
+
+  top: 15%;
+
+  width: 100%;
+
+  text-align: center;
+
+  font-size: clamp(12px, 2vw, 16px);
+
+  letter-spacing: 2px;
+
+  color: #666;
+
+  font-weight: 600;
+}
+
+/* =======================================================
+NAME
+=======================================================*/
+
+#guestDisplay {
+  position: absolute;
+
+  left: 50%;
+
+  top: 56.4%;
+
+  width: 54%;
+
+  transform: translateX(-50%) rotate(-4.2deg);
+
+  text-align: center;
+
+  font-size: clamp(17px, 4vw, 30px);
+
+  font-weight: 800;
+
+  color: #ffffff;
+
+  letter-spacing: 0.5px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  text-transform: uppercase;
+
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+}
+
+/* =======================================================
+FLOWER
+=======================================================*/
+
+.flower-section {
+  margin-top: 70px;
+
+  opacity: 0;
+
+  transform: translateY(60px) scale(0.7);
+
+  transition: 1s;
+}
+
+.flower-section.show {
+  opacity: 1;
+
+  transform: translateY(0) scale(1);
+}
+
+.flower {
+  width: min(170px, 36vw);
+
+  animation: flowerFloat 4s ease-in-out infinite;
+
+  cursor: pointer;
+}
+
+.flower:hover {
+  filter: drop-shadow(0 0 25px gold);
+}
+
+.flower-section p {
+  margin-top: 18px;
+
+  text-align: center;
+
+  color: white;
+
+  font-size: 17px;
+}
+
+@keyframes flowerFloat {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* =======================================================
+RESPONSIVE
+=======================================================*/
+
+@media (max-width: 768px) {
+  .music-section {
+    margin-top: 360px;
+  }
+
+  .record-player {
+    width: 82vw;
+  }
+
+  .tonearm {
+    width: 62%;
+
+    right: -18%;
+
+    top: -1%;
+  }
+
+  .input-wrapper {
+    width: 88vw;
+  }
+
+  .star {
+    width: 34vw;
+  }
+
+  .card-wrapper {
+    width: 94vw;
+  }
+
+  #guestDisplay {
+    width: 55%;
+
+    font-size: 20px;
+  }
+
+  .card-title {
+    font-size: 11px;
+  }
+
+  .flower {
+    width: 38vw;
+  }
+}

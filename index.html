@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Graduation Invitation</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  </head>
+
+  <body>
+    <!-- ================= BACKGROUND EFFECT ================= -->
+
+    <div id="particles"></div>
+
+    <div id="lightBeam"></div>
+
+    <!-- ================= LANDING ================= -->
+
+    <section id="landing">
+      <img src="assets/lights.png" class="lights" />
+
+      <div class="music-section">
+        <div class="record-player">
+          <img src="assets/vinyl.png" class="vinyl" />
+
+          <img src="assets/tonearm.png" class="tonearm" />
+        </div>
+      </div>
+
+      <div class="input-section">
+        <div class="input-wrapper">
+          <img src="assets/input.png" class="input-bg" />
+
+          <input
+            id="guestName"
+            type="text"
+            maxlength="30"
+            placeholder="Nhập tên của bạn"
+          />
+        </div>
+      </div>
+
+      <div class="star-section">
+        <img src="assets/star.png" class="star" id="openCard" />
+
+        <p class="star-text">Chạm ngôi sao để mở thiệp ✨</p>
+      </div>
+    </section>
+
+    <!-- ================= INVITATION ================= -->
+
+    <section id="cardSection">
+      <div class="card-wrapper">
+        <img src="assets/notebook.png" class="card" />
+
+        <div class="card-title">THANK YOU FOR BEING PART OF MY JOURNEY</div>
+
+        <div id="guestDisplay"></div>
+      </div>
+
+      <div class="flower-section">
+        <a href="https://forms.gle/GkLSDrfgYxrPaKbQ8" target="_blank">
+          <img src="assets/flower.png" class="flower" />
+        </a>
+
+        <p>Xác nhận tham dự tại đây 💛</p>
+      </div>
+    </section>
+
+    <!-- ================= AUDIO ================= -->
+
+    <audio id="bgMusic" preload="auto" loop>
+      <source src="assets/music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
