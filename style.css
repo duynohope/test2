@@ -287,26 +287,26 @@ VINYL
 .tonearm {
   position: absolute;
 
-  width: 58%;
+  width: 170px;
 
-  right: -16%;
+  top: 18px;
 
-  top: -2%;
+  right: -8px;
 
-  transform-origin: 16% 10%;
+  transform-origin: 92% 12%;
 
   animation: tonearmDrop 1.8s ease forwards;
 
-  z-index: 20;
+  z-index: 5;
 }
 
 @keyframes tonearmDrop {
   from {
-    transform: rotate(-22deg);
+    transform: rotate(-20deg);
   }
 
   to {
-    transform: rotate(0deg);
+    transform: rotate(22deg);
   }
 }
 
@@ -580,7 +580,7 @@ NAME
 #guestDisplay {
   position: absolute;
 
-  left: 55%;
+  left: 60%;
 
   top: 61.2%;
 
