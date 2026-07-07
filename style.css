@@ -204,7 +204,7 @@ LANDING
 .lights {
   position: absolute;
 
-  top: -50px;
+  top: -80px;
 
   left: 50%;
 
@@ -289,9 +289,9 @@ VINYL
 
   width: 190px;
 
-  top: 160px;
+  top: 2000px;
 
-  right: 0px;
+  right: 10px;
 
   transform-origin: 92% 12%;
 
@@ -580,9 +580,9 @@ NAME
 #guestDisplay {
   position: absolute;
 
-  left: 56.6%;
+  left: 56.5%;
 
-  top: 59%; /*xuong duoi nhieu hon thi tang top*/
+  top: 60%; /*xuong duoi nhieu hon thi tang top*/
 
   line-height: 1;
 
